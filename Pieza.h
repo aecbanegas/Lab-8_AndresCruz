@@ -12,5 +12,6 @@ class Pieza{
         virtual bool validarMovimiento(string,Pieza***)=0;
         virtual string getColor()=0;
         virtual string toString()=0;
+        virtual string getNombre()=0;
 };
 #endif

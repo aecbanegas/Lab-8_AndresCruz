@@ -9,7 +9,8 @@ class Peon:public Pieza{
         void setColor(string);
         virtual string getColor();
         virtual string toString();
+        virtual string getNombre();
         Peon();
-        Peon(string)
+        Peon(string);
 };
 #endif

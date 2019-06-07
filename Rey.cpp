@@ -11,6 +11,9 @@ void Rey::setColor(string col){
 string Rey::getColor(){
     return color;
 }
+string Rey::getNombre(){
+    return nombre;
+}
 bool Rey::validarMovimiento(string coordenada,Pieza*** tablero){
     int x1,y1,x2,y2;
     bool valido=false;

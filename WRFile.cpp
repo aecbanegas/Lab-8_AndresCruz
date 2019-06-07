@@ -3,7 +3,7 @@
 using std::stringstream;
 WRFile::WRFile(){
 }
-void WRFile::leerArchivo(vector<Partida*> &partidas){
+void WRFile::leerArchivo(vector<Partida*> partidas){
     string linea;    
     int cont=0;
     file("bitacoraPartidas.txt");

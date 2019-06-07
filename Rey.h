@@ -7,6 +7,7 @@ class Rey:public Pieza{
         virtual string toString();
         void setColor(string);
         virtual string getColor();
+        virtual string getNombre();
         Rey();
         Rey(string);
 };

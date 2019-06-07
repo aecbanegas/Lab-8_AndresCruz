@@ -15,6 +15,9 @@ string Peon::getColor(){
 string Peon::toString(){
     return "P";
 }
+string Peon::getNombre(){
+    return nombre;
+}
 bool Peon::validarMovimiento(string coordenada,Pieza*** tablero){
     int x1,y1,x2,y2;
     bool valido=false;

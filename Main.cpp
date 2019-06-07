@@ -2,11 +2,11 @@
 #include "Rey.h"
 #include "WRFile.h"
 #include "Pieza.h"
-#include "Reina.h"
+/*#include "Reina.h"
 #include "Torre.h"
-#include "Alfil.h"
+#include "Alfil.h"*/
 #include "Peon.h"
-#include "Caballo.h"
+//#include "Caballo.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -16,7 +16,7 @@ void Jugar(vector<Partida*>&);
 void Recrear(Partida*);
 Pieza*** crearTablero();
 void liberarTablero(Pieza***);
-void imprimirTablero();
+void imprimirTablero(Pieza***);
 int main(){
     vector<Partida*>partidas;
     WRFile* archivo=new WRFile();
@@ -31,6 +31,7 @@ int main(){
         cin>>opcm;
         if(opcm==1){
             Jugar(partidas);
+            partidas[partidas.size()-1]->guardarPartida(archivo);
         }
         if(opcm==2){
             if (!partidas.empty()){
@@ -50,8 +51,7 @@ int main(){
             }
             
         }
-    }
-    
+    }    
     for (int i = 0; i < partidas.size(); i++){//liberar vector
         delete partidas[i];
     }
@@ -91,7 +91,7 @@ void Jugar(vector<Partida*> &partidas){
     while(true){
         string coordenada;
         int x,y,x2,y2;
-        if((color){//negro
+        if(color){//negro
             cout<<"Ingrese las coordenadas en el formato [a6,b6] siendo las letras de la "<<endl
                 <<"a a la h las columnas y del 1 al 8 las filas"<<endl
                 <<"Ingrese las coordenadas: "<<endl;
@@ -136,6 +136,9 @@ void Jugar(vector<Partida*> &partidas){
         if(continua=="no"){
             break;
         }
+    }
+    if(opcp==1){
+        partidas.push_back(new Partida(nom,"Peon"));
     }
     liberarTablero(tablero);
 }
@@ -184,9 +187,12 @@ void liberarTablero(Pieza*** tablero){
 }
 void Recrear(Partida* partida){
     vector<string> mov=partida->getMovimientos();
+    Pieza*** tablero=crearTablero();
+
     for (int i = 0; i < mov.size(); i++){
         cout<<"Movimiento Numero: "<<(i+1)<<endl;
         string temporal=mov[i];
+        int x,y,x2,y2;
         x=temporal[1]-97;
         y=(int)temporal[2]-49;
         y=(y*-1)+8;
