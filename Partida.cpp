@@ -20,3 +20,6 @@ void Partida::setPieza(string pie){
 string Partida::getNombre(){
     return nombre;
 }
+vector<string> Partida::getMovimientos(){
+    return movimientos;
+}

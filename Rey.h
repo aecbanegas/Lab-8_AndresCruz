@@ -4,6 +4,10 @@
 class Rey:public Pieza{
     public:
         virtual bool validarMovimiento(string,Pieza***);
+        virtual string toString();
+        void setColor(string);
+        virtual string getColor();
         Rey();
+        Rey(string);
 };
 #endif

@@ -14,6 +14,7 @@ class Partida{
         void guardarPartida(WRFile*);
         Partida(string,string);
         void setMovimientos(vector<string>);
+        vector<string> getMovimientos();
         void setNombre(string);
         void setPieza(string);
         string getNombre();
