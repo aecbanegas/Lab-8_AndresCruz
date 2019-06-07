@@ -20,7 +20,7 @@ void imprimirTablero(Pieza***);
 int main(){
     vector<Partida*>partidas;
     WRFile* archivo=new WRFile();
-    archivo->leerArchivo(partidas);
+    partidas=archivo->leerArchivo();
     int opcm=0;
     while(opcm!=3){//menu
         cout<<"         Menu"<<endl

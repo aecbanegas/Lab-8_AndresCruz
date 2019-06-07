@@ -11,6 +11,6 @@ class WRFile{
     public:
         WRFile();
         void escribirArchivo(string,string,vector<string>);
-        void leerArchivo(vector<Partida*>);
+        vector<Partida*> leerArchivo();
 };
 #endif

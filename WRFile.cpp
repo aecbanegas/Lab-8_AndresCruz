@@ -1,11 +1,13 @@
 #include "WRFile.h"
 #include <sstream>
+#include "Partida.h"
 using std::stringstream;
 WRFile::WRFile(){
 }
-void WRFile::leerArchivo(vector<Partida*> partidas){
+vector<Partida*> WRFile::leerArchivo(){
     string linea;    
     int cont=0;
+    vector<Partida*> partidas;
     file("bitacoraPartidas.txt");
     if(file.is_open()==false){
         file.open();
@@ -36,6 +38,7 @@ void WRFile::leerArchivo(vector<Partida*> partidas){
         }
     }
     file.close();
+    return partidas;
 }
 void WRFile::escribirArchivo(string nombres,string piezas,vector<string> movimientos){
     file("bitacoraPartidas.txt",ios::app);
