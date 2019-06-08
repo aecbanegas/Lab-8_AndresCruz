@@ -1,6 +1,5 @@
 #include "WRFile.h"
 #include <sstream>
-#include "Partida.h"
 #include <vector>
 using std::stringstream;
 using std::vector;
@@ -10,10 +9,8 @@ vector<Partida*> WRFile::leerArchivo(){
     string linea;    
     int cont=0;
     vector<Partida*> partidas;
-    file("bitacoraPartidas.txt");
-    if(file.is_open()==false){
-        file.open();
-    }
+    string hola="bitacoraPartidas.txt";
+    file.open(hola,fstream::in | fstream::out);
     while(getline(file,linea)){
         if(cont==0){
             partidas.push_back(new Partida());
@@ -43,10 +40,8 @@ vector<Partida*> WRFile::leerArchivo(){
     return partidas;
 }
 void WRFile::escribirArchivo(string nombres,string piezas,vector<string> movimientos){
-    file("bitacoraPartidas.txt",ios::app);
-    if(file.is_open()==false){
-        file.open();
-    }
+    string hola="bitacoraPartidas.txt";
+    file.open(hola,ios::app);
     file<<nombres<<"\n"<<piezas<<"\n";
     for (int i = 0; i < movimientos.size(); i++){
         file<<movimientos[i]<<";";

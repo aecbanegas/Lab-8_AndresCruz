@@ -9,4 +9,4 @@ Peon.o: Peon.cpp Peon.h Pieza.h
 WRFile.o: WRFile.cpp WRFile.h
 	g++ -c WRFile.cpp
 Partida.o: Partida.cpp Partida.h
-	g++ -c Partida.o
+	g++ -c Partida.cpp

@@ -23,7 +23,7 @@ bool Rey::validarMovimiento(string coordenada,Pieza*** tablero){
     x2=coordenada[4]-97;
     y2=coordenada[5]-49;
     y2=(y2*-1)+8;
-    if((tablero[x1][y1]->toString()=='K')){
+
         if((x2-1==x1)&&(y1==y2)){
             valido=true;
         }
@@ -48,7 +48,7 @@ bool Rey::validarMovimiento(string coordenada,Pieza*** tablero){
         if((x2==x1)&&(y1==y2+1)){
             valido=true;
         }
-    }
+    
     return valido;
 }
 string Rey::toString(){

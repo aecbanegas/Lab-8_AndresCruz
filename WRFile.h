@@ -1,10 +1,11 @@
-#include "Partida.h"
 #ifndef WRFILE_H
 #define WRFILE_H
+#include "Partida.h"
 #include <fstream>
 #include <string>
 #include <vector>
 using namespace std;
+
 class WRFile{
     private:
         fstream file;

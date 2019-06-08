@@ -30,7 +30,7 @@ int main(){
         cin>>opcm;
         if(opcm==1){
             Jugar(partidas);
-            partidas[partidas.size()-1]->guardarPartida(archivo);
+            partidas[partidas.size()-1]->guardarPartida();
         }
         if(opcm==2){
             if (!partidas.empty()){
@@ -60,8 +60,9 @@ int main(){
 }
 void Jugar(vector<Partida*> &partidas){
     cout<<"Bienvenido a APRENDE AJEDREZ"<<endl;
-    string nom;
+    string nom="";
     cout<<"Ingrese el nombre de la partida: "<<endl;
+    getline(cin,nom);
     getline(cin,nom);
     int opcp=0;
     while(opcp!=1){

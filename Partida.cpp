@@ -1,6 +1,7 @@
 #include "Partida.h"
+#include "WRFile.h"
 Partida::Partida(){
-};
+}
 Partida::Partida(string nom, string pie){
     nombre=nom;
     pie=pie;
@@ -8,8 +9,10 @@ Partida::Partida(string nom, string pie){
 void Partida::setMovimientos(vector<string> movs){
     movimientos=movs;    
 }
-void Partida::guardarPartida(WRFile* cargar){
+void Partida::guardarPartida(){
+    WRFile* cargar;
     cargar->escribirArchivo(nombre,pieza,movimientos);    
+    delete cargar;
 }
 void Partida::setNombre(string nom){
     nombre=nom;

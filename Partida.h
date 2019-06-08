@@ -1,7 +1,7 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
 #include <string>
-#include "WRFile.h"
+
 #include <vector>
 using std::string;
 using std::vector;
@@ -11,7 +11,7 @@ class Partida{
         string pieza;
         vector<string> movimientos;
     public:
-        void guardarPartida(WRFile*);
+        void guardarPartida();
         Partida(string,string);
         void setMovimientos(vector<string>);
         vector<string> getMovimientos();
