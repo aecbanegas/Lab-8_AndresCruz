@@ -18,9 +18,8 @@ Pieza*** crearTablero();
 void liberarTablero(Pieza***);
 void imprimirTablero(Pieza***);
 int main(){
-    vector<Partida*>partidas;
     WRFile* archivo=new WRFile();
-    partidas=archivo->leerArchivo();
+    vector<Partida*>partidas=(archivo->leerArchivo());
     int opcm=0;
     while(opcm!=3){//menu
         cout<<"         Menu"<<endl

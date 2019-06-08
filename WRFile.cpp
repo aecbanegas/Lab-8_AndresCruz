@@ -1,7 +1,9 @@
 #include "WRFile.h"
 #include <sstream>
 #include "Partida.h"
+#include <vector>
 using std::stringstream;
+using std::vector;
 WRFile::WRFile(){
 }
 vector<Partida*> WRFile::leerArchivo(){
